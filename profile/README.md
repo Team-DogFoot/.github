@@ -156,40 +156,6 @@
 
 ---
 
-## 네임스페이스 및 서비스 구조
-
-```
-argocd            → GitOps 관리 (ArgoCD Server, ApplicationSet)
-├── argocd.dog-foot.com
-
-hm-dev            → HM 프로젝트 개발 환경
-├── hm-api-dev.dog-foot.com
-├── hm-admin-dev.dog-foot.com
-├── hm-bong-client-dev.dog-foot.com
-└── hm-playduk-dev.dog-foot.com
-
-hm-prod           → HM 프로젝트 프로덕션 환경
-├── hm-api-prod.dog-foot.com
-├── hm-admin-prod.dog-foot.com
-├── hm-bong-client-prod.dog-foot.com
-└── hm-playduk-prod.dog-foot.com
-
-mok-hyung-prod    → 목형 프로젝트 프로덕션
-└── mok-prod.dog-foot.com
-
-monitoring        → Prometheus + Grafana
-└── grafana.dog-foot.com
-
-logging           → EFK Stack
-└── kibana.dog-foot.com
-
-cert-manager      → SSL/TLS 자동화
-ingress-nginx     → Ingress Controller
-metallb-system    → LoadBalancer
-```
-
----
-
 ## CI/CD 워크플로우
 
 ```
@@ -218,66 +184,10 @@ metallb-system    → LoadBalancer
                   └──────────────┘
 ```
 
----
-
-## 학습 성과 및 역량
-
-### 인프라 자동화
-
-- Infrastructure as Code 원칙 적용 (모든 설정이 Git으로 관리)
-- Helm Chart를 이용한 패키지 관리
-- 선언적 매니페스트 작성 및 버전 관리
-
-### 컨테이너 오케스트레이션
-
-- Kubernetes 리소스 이해 (Deployment, Service, Ingress, PVC 등)
-- 리소스 최적화 및 노드 스케줄링
-- 네임스페이스 기반 멀티 테넌시
-
-### 관찰성 구축
-
-- 메트릭, 로그, 트레이스의 3 Pillar 이해
-- PromQL을 이용한 쿼리 작성 및 대시보드 구성
-- 중앙 집중식 로깅 시스템 운영
-
-### 네트워크 및 보안
-
-- CNI, Service Mesh 개념 이해
-- Ingress Controller 및 LoadBalancer 운영
-- TLS 인증서 자동화 및 VPN 기반 접근 제어
-
-### 문제 해결 경험
-
-- etcd 클러스터 장애 복구
-- 리소스 부족으로 인한 파드 스케줄링 실패 해결
-- DNS 및 네트워크 정책 디버깅
-
----
-
 ## 향후 계획
 
 - [ ] Helm Chart 기반 애플리케이션 패키징
-- [ ] Kubernetes Operator 개발 학습
-- [ ] Service Mesh (Istio/Linkerd) 도입
-- [ ] Chaos Engineering 실습 (chaos-a 노드 활용)
+- [ ] Service Mesh (Istio/Linkerd) 학습
+- [ ] 장애 상황 대응 훈련 (chaos-a 노드 활용)
 - [ ] Backup & Disaster Recovery 자동화
 - [ ] Prometheus Alertmanager 알림 규칙 고도화
-
----
-
-## 프로젝트 정보
-
-- **GitOps 레포지토리**: [dog-foot-k8s-manifests](https://github.com/Team-DogFoot/dog-foot-k8s-manifests)
-- **클러스터 구성**: 3 Control-plane + 2 Worker
-- **관리 도구**: kubectl (MacBook에서 Tailscale VPN 경유)
-- **운영 기간**: 2024.09 ~ 현재
-
----
-
-## 연락처
-
-**이 프로젝트에 대해 더 자세히 알고 싶으시거나 질문이 있으시다면 언제든 연락 주세요.**
-
----
-
-> 이 프로젝트는 단순히 기술을 학습하는 것을 넘어, 실제 서비스를 운영하며 **안정성, 확장성, 보안**을 고민하고 해결한 DevOps 실전 경험의 결과물입니다.
